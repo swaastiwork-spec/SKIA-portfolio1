@@ -129,7 +129,7 @@ export default function Contact() {
                     href="tel:+919373682486"
                     className="text-brand-espresso font-body text-sm hover:text-brand-deep transition-colors"
                   >
-                    +91 937-368-2486
+                    +91 826-500-0236
                   </a>
                 </div>
                 <div>
