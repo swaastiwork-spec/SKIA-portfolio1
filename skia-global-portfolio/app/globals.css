@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Lato:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-blush:    #E8D5C4;
+  --brand-caramel:  #D4B896;
+  --brand-deep:     #C4A882;
+  --brand-espresso: #5C3D2E;
+  --brand-cream:    #F7F1EB;
+  --brand-pale:     #EDE0D4;
+  --brand-brown:    #8B6350;
+  --brand-slate:    #7A6A5A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--brand-cream);
+  color: var(--brand-espresso);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--brand-caramel);
+  color: var(--brand-espresso);
+}
+
+@layer components {
+  .section-label {
+    @apply font-body text-xs tracking-widest2 uppercase text-brand-deep font-semibold;
+  }
+
+  .display-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    @apply text-brand-espresso font-light leading-tight;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply text-brand-espresso font-semibold;
+  }
+
+  .body-text {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    @apply text-brand-espresso leading-relaxed;
+  }
+
+  .divider-line {
+    @apply border-t border-brand-deep/30;
+  }
+
+  .btn-primary {
+    @apply inline-block bg-brand-blush text-brand-espresso font-body font-semibold text-xs tracking-widest2 uppercase px-8 py-4
+           border border-brand-deep/40 hover:bg-brand-caramel hover:border-brand-deep
+           transition-all duration-300 ease-in-out;
+  }
+
+  .btn-outline {
+    @apply inline-block bg-transparent text-brand-espresso font-body font-semibold text-xs tracking-widest2 uppercase px-8 py-4
+           border border-brand-deep hover:bg-brand-blush
+           transition-all duration-300 ease-in-out;
+  }
+
+  .metric-card {
+    @apply border border-brand-deep/20 bg-brand-pale/50 p-8 text-center hover:bg-brand-pale
+           transition-all duration-300;
+  }
+
+  .program-card {
+    @apply border border-brand-deep/20 bg-brand-cream p-8 hover:border-brand-deep
+           transition-all duration-300 group;
+  }
+
+  .case-card {
+    @apply border border-brand-deep/20 bg-brand-pale/40 p-8 hover:bg-brand-pale
+           transition-all duration-300 cursor-default;
+  }
+
+  .tag-pill {
+    @apply inline-block text-xs font-body font-medium tracking-wider uppercase
+           px-3 py-1 bg-brand-blush/60 text-brand-espresso border border-brand-deep/20;
+  }
+}
+
+/* Animated underline on hover for nav links */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--brand-deep);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Vertical caramel rule for quotes */
+.quote-rule {
+  border-left: 2px solid var(--brand-deep);
+  padding-left: 1.5rem;
+}
+
+/* Scroll fade-in utility */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--brand-cream); }
+::-webkit-scrollbar-thumb { background: var(--brand-caramel); border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-deep); }
