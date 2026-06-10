@@ -126,7 +126,7 @@ export default function Contact() {
                 <div>
                   <div className="section-label text-[10px] mb-1">Phone</div>
                   <a
-                    href="tel:+919373682486"
+                    href="tel:+918265000236"
                     className="text-brand-espresso font-body text-sm hover:text-brand-deep transition-colors"
                   >
                     +91 826-500-0236
